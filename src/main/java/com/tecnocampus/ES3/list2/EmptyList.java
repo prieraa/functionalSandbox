@@ -3,7 +3,7 @@ package com.tecnocampus.ES3.list2;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-public class EmptyList extends MyList {
+public class EmptyList extends AbstractMyList {
 
     @Override
     public MyList extend(int newHead) {

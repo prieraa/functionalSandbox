@@ -3,14 +3,17 @@ package com.tecnocampus.ES3.list2;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-public class MyRealList extends MyList {
+public class MyRealList extends AbstractMyList {
 
     private final int head;
-    private final MyList tail;
+    private final AbstractMyList tail;
 
-    public MyRealList (int head, MyList tail) {
+    // Package-protected, as we're breaking Liskov here
+    MyRealList (int head, MyList tail) {
         this.head = head;
-        this.tail = tail;
+
+        // This is an ugly compromise
+        this.tail = (AbstractMyList) tail;
     }
 
     @Override
